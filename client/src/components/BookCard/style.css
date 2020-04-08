@@ -1,6 +1,6 @@
 .card {
     padding: 15px;
-    margin: 15px;
+    margin: 10px !important;
 }
 
 .btn {
@@ -27,6 +27,10 @@
     font-weight: 700;
     text-decoration-line: underline;
     float: left;
+}
+
+#bookName a {
+    color: black;
 }
 
 img {
