@@ -7,9 +7,9 @@ import Footer from "../components/Footer";
 
 function Home() {
     return (
-        <Wrapper addClass="row god">
+        <Wrapper addClasses="row god">
             <Header />
-            <Wrapper addClass="row content">
+            <Wrapper addClasses="row content">
                 <Jumbotron />
                 <ContentCard subtitle="My List"
                     search="false"

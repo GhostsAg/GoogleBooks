@@ -4,14 +4,28 @@ h4 {
 
 }
 
-.true {
-    display: block;
+h3 {
+    font-family: sans-serif;
+    text-align: center;
+
 }
 
-.false {
-    display: none;
+form.true {
+    display: block !important;
+    margin-bottom: 15vh;
 }
 
-#true {
-    display: none;
+form.false {
+    display: none !important;
 }
+
+h3#true {
+    display: none !important;
+}
+
+h3#false {
+    display: block !important;
+}
+
+
+

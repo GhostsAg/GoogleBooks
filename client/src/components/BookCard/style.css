@@ -29,17 +29,40 @@
     float: left;
 }
 
+#author {
+    font-size: 14px;
+    font-weight: 300;
+}
+
 #bookName a {
     color: black;
 }
 
 img {
     margin-top: 14px;
-    max-width: 150px;
-    max-height: 150px;
+    max-width: 175px;
+    max-height: 175px;
     float: left;
 }
 
 p {
     font-size: 14px;
+    text-align: justify;
+}
+
+button#true {
+    display: block !important;
+    padding: 10px;
+}
+
+button#false {
+    display: none !important;
+}
+
+button.true {
+    display: none !important;
+}
+
+button.false {
+    display: block !important;
 }

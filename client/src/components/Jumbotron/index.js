@@ -4,7 +4,7 @@ import "./style.css";
 
 function Jumbotron() {
     return (
-        <ElemContainer addClass="col s12 jumbo">
+        <ElemContainer addClasses="col s12 jumbo">
             <h4>(React) Google Books Search</h4>
             <p>Search for and Save Books of Interest</p>
         </ElemContainer>

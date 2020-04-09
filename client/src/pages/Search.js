@@ -7,9 +7,9 @@ import ContentCard from "../components/ContentCard";
 
 function Search() {
     return (
-        <Wrapper addClass="row god">
+        <Wrapper addClasses="row god">
             <Header />
-            <Wrapper addClass="row content">
+            <Wrapper addClasses="row content">
                 {/* <SearchCard subtitle="Search Book Titles"
                 /> */}
                 <ContentCard subtitle="Search Book Titles" 

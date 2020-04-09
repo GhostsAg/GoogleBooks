@@ -25,7 +25,7 @@ function SearchCard(props) {
     }
 
     return (
-        <ElemContainer addClass="elemContainer col s12">
+        <ElemContainer addClasses="elemContainer col s12">
             <h4>{props.subtitle}</h4>
             <form>
                 <Input onChange={handleInputChange}

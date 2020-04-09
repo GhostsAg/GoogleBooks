@@ -19,7 +19,7 @@ function ContentCard(props) {
         if (props.search === "false") {
             loadBooks();
         }
-    })
+    }, [])
 
     function loadBooks() {
         API.getBooks()
@@ -37,28 +37,30 @@ function ContentCard(props) {
         API.searchBook(formObject.book)
         .then( (books) => {
             books.data.items.forEach( (book) => {
-                search.push(
-                {
+                search.push({
                     _id: book.id,
                     title: book.volumeInfo.title,
-                    author: book.volumeInfo.authors[0],
-                    link: book.selfLink,    
+                    author: book.volumeInfo.authors,
+                    info: book.volumeInfo.description,
+                    link: book.volumeInfo.infoLink,    
                     img: book.volumeInfo.imageLinks.smallThumbnail
-                })
+                });
             });
+            setBooks(search);
         })
     }
 
     return (
-        <ElemContainer addClass="elemContainer col s12">
+        <ElemContainer addClasses="elemContainer col s12">
             <h4>{props.subtitle}</h4>
-            <form className={props.search}>
+            <form className={"row " + props.search}>
                 <Input onChange={handleInputChange}
                     name="book"
-                    placeholder="Book Title"
+                    addClasses="col s6 push-s3"
                 />
                 <FormBtn disabled={!formObject.book}
                     onClick={handleFormSubmit}
+                    addClasses="col s3"
                 >
                     Search
                 </FormBtn>
@@ -66,14 +68,23 @@ function ContentCard(props) {
             {books.length ? (
                 <div>
                     {books.map( (book) => {
+                        let authorList = "";
+                        if (book.author) {
+                            book.author.forEach( (author) => {
+                                authorList += author + ", ";
+                            });
+                            authorList = authorList.replace(/(, )$/,".");
+                        }
                         return (
                             <BookCard key={book._id}
-                            apiHref={"/books/" + book._id}
+                            apiHref={book._id}
                             bookName={book.title}
-                            author={book.author}
-                            link={book.author}
-                            info={book.synopsis}
+                            author={authorList}
+                            link={book.link}
+                            info={book.info}
                             img={book.img}
+                            search={props.search}
+                            loadBooks={loadBooks}
                             />
                         );
                     })}
