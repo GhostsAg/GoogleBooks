@@ -3,3 +3,15 @@ h4 {
     text-align: center;
 
 }
+
+.true {
+    display: block;
+}
+
+.false {
+    display: none;
+}
+
+#true {
+    display: none;
+}

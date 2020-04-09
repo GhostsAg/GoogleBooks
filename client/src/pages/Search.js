@@ -1,18 +1,19 @@
 import React from "react";
 import Header from "../components/Header";
-import Jumbotron from "../components/Jumbotron";
 import Wrapper from "../components/Wrapper";
-import ContentCard from "../components/ContentCard";
+// import SearchCard from "../components/SearchCard";
 import Footer from "../components/Footer";
+import ContentCard from "../components/ContentCard";
 
-function Home() {
+function Search() {
     return (
         <Wrapper addClass="row god">
             <Header />
             <Wrapper addClass="row content">
-                <Jumbotron />
-                <ContentCard subtitle="My List"
-                    search="false"
+                {/* <SearchCard subtitle="Search Book Titles"
+                /> */}
+                <ContentCard subtitle="Search Book Titles" 
+                    search="true"
                 />
             </Wrapper>
             <Footer />
@@ -20,4 +21,4 @@ function Home() {
     );
 }
 
-export default Home;
+export default Search;
