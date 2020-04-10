@@ -66,13 +66,3 @@ button.true {
 button.false {
     display: block !important;
 }
-
-#true-leave {
-    opacity: 1;
-}
-
-#true-leave#true-leave-active {
-    opacity: 0.01;
-    width: 0px;
-    transition: opacity 750ms ease-in;
-}
