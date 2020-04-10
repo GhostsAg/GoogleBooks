@@ -49,7 +49,7 @@ function BookCard(props) {
             <div className="row">
                 <div className="card-image waves-effect waves-block waves-light">
                     <img className="col s6 l6" src={props.img} alt="visuals"/>
-                    <p className="col s10 l8">{props.info}</p>
+                    <p className="col s10 l8 push-s1">{props.info}</p>
                 </div>
             </div>
         </div>
