@@ -36,7 +36,7 @@ function ContentCard(props) {
         event.preventDefault();
         API.searchBook(formObject.book)
         .then( (books) => {
-            books.data.items.forEach( (book) => {
+            books.data.items.forEach( (book) => {   
                 search.push({
                     _id: book.id,
                     title: book.volumeInfo.title,
@@ -48,6 +48,7 @@ function ContentCard(props) {
             });
             setBooks(search);
         })
+        .catch( (err) => console.log(err));
     }
 
     return (
@@ -73,7 +74,7 @@ function ContentCard(props) {
                             book.author.forEach( (author) => {
                                 authorList += author + ", ";
                             });
-                            authorList = authorList.replace(/(, )$/,".");
+                            authorList = authorList.replace(/(, )$/,"");
                         }
                         return (
                             <BookCard key={book._id}
