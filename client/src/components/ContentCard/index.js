@@ -48,7 +48,7 @@ function ContentCard(props) {
             });
             setBooks(search);
         })
-        .catch( (err) => console.log(err));
+        .catch( (err) => console.log("Sorry your book might be blocked in your country. " + err));
     }
 
     return (
@@ -75,6 +75,8 @@ function ContentCard(props) {
                                 authorList += author + ", ";
                             });
                             authorList = authorList.replace(/(, )$/,"");
+                        } else {
+                            authorList = "Unkown."
                         }
                         return (
                             <BookCard key={book._id}
